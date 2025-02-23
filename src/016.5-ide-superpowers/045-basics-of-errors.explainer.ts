@@ -8,7 +8,9 @@ a.toString();
 // But not everything it warns you
 // about will fail at runtime
 
-const obj = {};
+const obj: {
+  foo?: string;
+} = {};
 
 obj.foo = "hello";
 
@@ -20,12 +22,12 @@ type MyUser = {
 };
 
 const user: MyUser = {
-  nme: "Katherine",
+  name: "Katherine",
 };
 
 // But sometimes that's not always possible
 
-type FunctionThatReturnsAString = () => string;
+type FunctionThatReturnsAString = () => number;
 
 const fn: FunctionThatReturnsAString = () => {
   return 123;
